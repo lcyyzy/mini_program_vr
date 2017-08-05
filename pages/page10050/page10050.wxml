@@ -1,0 +1,94 @@
+<view class="app">
+<import src="../../components/wxParse/wxParse.wxml"/>
+<template name="zcText">
+  <block wx:if="{{real_value}}">
+    <block wx:if="{{real_value.join !== undefined}}">
+      <view class="element text" style="{{data.style}}" data-event-params="{{data.eventParams}}" catchtap="{{data.eventHandler}}">
+        <view class="wxParse">
+          <template is="wxParse" data="{{wxParseData: real_value}}"/>
+        </view>
+      </view>
+    </block>
+    <block wx:else>
+      <text class="element text" style="{{data.style}}" data-event-params="{{data.eventParams}}" catchtap="{{data.eventHandler}}">{{real_value}}</text>
+    </block>
+  </block>
+  <block wx:else>
+    <text class="element text" style="{{data.style}}" data-event-params="{{data.eventParams}}" catchtap="{{data.eventHandler}}">{{data.content}}</text>
+  </block>
+</template>
+<view class="ele-container">
+  <block wx:if="{{real_value}}">
+    <template is="zcText" data="{{data:text1, real_value:real_value.form_data.tittle, detail_data: detail_data}}"></template>
+  </block>
+  <block wx:elif="{{detail_data.tittle && !vessel_page_data.form_data.tittle}}">
+    <template is="zcText" data="{{data:text1, real_value:detail_data.tittle, detail_data: detail_data}}"></template>
+  </block>
+  <block wx:elif="{{vessel_page_data.form_data.tittle}}">
+    <template is="zcText" data="{{data:text1, real_value:vessel_page_data.form_data.tittle, detail_data: detail_data}}"></template>
+  </block>
+  <block wx:else>
+    <template is="zcText" data="{{data:text1, real_value:item.form_data.tittle, detail_data: detail_data}}"></template>
+  </block>
+</view>
+
+<template name="zcFreeVessel2">
+  <view class="element free-vessel" style="{{data.style}}" data-event-params="{{data.eventParams}}" catchtap="{{data.eventHandler}}">
+    <view class="ele-container">
+  <block wx:if="{{real_value}}">
+    <template is="zcText" data="{{data:data.content[0], real_value:real_value.form_data.author, detail_data: detail_data}}"></template>
+  </block>
+  <block wx:elif="{{detail_data.author && !vessel_page_data.form_data.author}}">
+    <template is="zcText" data="{{data:data.content[0], real_value:detail_data.author, detail_data: detail_data}}"></template>
+  </block>
+  <block wx:elif="{{vessel_page_data.form_data.author}}">
+    <template is="zcText" data="{{data:data.content[0], real_value:vessel_page_data.form_data.author, detail_data: detail_data}}"></template>
+  </block>
+  <block wx:else>
+    <template is="zcText" data="{{data:data.content[0], real_value:item.form_data.author, detail_data: detail_data}}"></template>
+  </block>
+</view>
+
+<view class="ele-container">
+  <block wx:if="{{real_value}}">
+    <template is="zcText" data="{{data:data.content[1], real_value:real_value.form_data.time, detail_data: detail_data}}"></template>
+  </block>
+  <block wx:elif="{{detail_data.time && !vessel_page_data.form_data.time}}">
+    <template is="zcText" data="{{data:data.content[1], real_value:detail_data.time, detail_data: detail_data}}"></template>
+  </block>
+  <block wx:elif="{{vessel_page_data.form_data.time}}">
+    <template is="zcText" data="{{data:data.content[1], real_value:vessel_page_data.form_data.time, detail_data: detail_data}}"></template>
+  </block>
+  <block wx:else>
+    <template is="zcText" data="{{data:data.content[1], real_value:item.form_data.time, detail_data: detail_data}}"></template>
+  </block>
+</view>
+
+
+  </view>
+</template>
+<view class="ele-container">
+<block wx:if="{{real_value}}">
+  <template is="zcFreeVessel2" data="{{data:free_vessel2, real_value:real_value, detail_data: detail_data}}"></template>
+</block>
+<block wx:else>
+  <template is="zcFreeVessel2" data="{{data:free_vessel2, real_value:item, detail_data: detail_data ,index:index,item : item , parentType : free_vessel2.parentCompid}}"></template>
+</block>
+</view>
+<view class="ele-container">
+  <block wx:if="{{real_value}}">
+    <template is="zcText" data="{{data:text3, real_value:real_value.form_data.details, detail_data: detail_data}}"></template>
+  </block>
+  <block wx:elif="{{detail_data.details && !vessel_page_data.form_data.details}}">
+    <template is="zcText" data="{{data:text3, real_value:detail_data.details, detail_data: detail_data}}"></template>
+  </block>
+  <block wx:elif="{{vessel_page_data.form_data.details}}">
+    <template is="zcText" data="{{data:text3, real_value:vessel_page_data.form_data.details, detail_data: detail_data}}"></template>
+  </block>
+  <block wx:else>
+    <template is="zcText" data="{{data:text3, real_value:item.form_data.details, detail_data: detail_data}}"></template>
+  </block>
+</view>
+
+
+</view>

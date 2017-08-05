@@ -1,0 +1,14 @@
+{
+  "pages": ["pages\/page10000\/page10000","pages\/page10002\/page10002","pages\/page10048\/page10048","pages\/page10049\/page10049","pages\/page10050\/page10050","pages\/bindCellphone\/bindCellphone","pages\/advanceSearch\/advanceSearch","pages\/extensionPage\/extensionPage"],
+  "window": {
+    "enablePullDownRefresh": false
+  },
+    "tabBar": {"borderStyle":"white","color":"#C7CCCF","selectedColor":"#36D3CF","backgroundColor":"#FFFFFF","list":[{"iconPath":"images\/598436aecede2.jpg","selectedIconPath":"images\/598436aecee40.jpg","text":"首页","pagePath":"pages\/page10000\/page10000"},{"iconPath":"images\/598436aee8f6a.jpg","selectedIconPath":"images\/598436aee8fbc.jpg","text":"联系我们","pagePath":"pages\/page10002\/page10002"},{"iconPath":"images\/598436af18c3f.jpg","selectedIconPath":"images\/598436af18c94.jpg","text":"加入我们","pagePath":"pages\/page10048\/page10048"},{"iconPath":"images\/598436af35151.jpg","selectedIconPath":"images\/598436af351a3.jpg","text":"资讯","pagePath":"pages\/page10049\/page10049"}]},
+    "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  },
+  "debug": false
+}
